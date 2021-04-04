@@ -1,10 +1,15 @@
-from flask import Flask
+from flask import Flask,jsonify
 
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-	return "helloss"
+	json_test = {"1":"2"}
+	return json_test
+
+@app.route("/test")
+def throw():
+	return 1/0;
 
 if __name__ == '__main__':
   app.run()
