@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-	json_test = {"1":"2"}
+	json_test = {"1":"3"}
 	return json_test
 
 @app.route("/test")
