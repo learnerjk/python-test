@@ -34,3 +34,10 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+    - name: build docker image and push to dockerhub
+      uses: mr-smithers-excellent/docker-build-push@v5
+      with:
+        image: dockerjkh123/python-test
+        registry: docker.io
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
