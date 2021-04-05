@@ -35,6 +35,8 @@ jobs:
       run: |
         pytest
     - name: build docker image and push to dockerhub
+      # Develop branch only
+      if: github.ref == 'refs/heads/master'
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: dockerjkh123/python-test
